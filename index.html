@@ -18,9 +18,9 @@
 <div class="panel"><h2>Importer la liste des inscrits ou un fichier de sauvegarde.</h2>
 <p>Fichier .csv issu du formulaire d’inscription (attention à la structure du fichier !). Les nouveaux élèves sont ajoutés (repérés par ID ou nom d’utilisateur) et les présences déjà enregistrées sont conservées. Une sauvegarde peut aussi être réimportée.</p>
 <input type="file" id="file" accept=".csv,text/csv"></div>
-<div class="panel"><h2>Enregistrer</h2>
+<div class="panel"><h2>Sauvegarder les données</h2>
 <p>Génère un .csv complet incluant la gestion des présences par séance et le total.</p>
-<button class="exp">Sauvegarde</button></div>
+<button class="exp">Exporter</button></div>
 <p id="m1" class="msg wide"></p>
 <div class="panel wide"><h2>Élèves inscrits à l’AS <span id="nl"></span></h2>
 <table id="tl"></table></div>
@@ -43,10 +43,10 @@
 <div id="cam" hidden><video id="v" playsinline muted></video></div>
 <p id="m3" class="msg"></p>
 <div class="row man"><input id="man" list="dl" placeholder="Ajout manuel (nom)"><button id="add" class="alt">Ajouter</button></div></div>
-<div class="panel"><h2>Elèves présents aujourd'hui <span id="np"></span></h2><ul id="pl"></ul>
+<div class="panel"><h2>Elèves présents à cette séance <span id="np"></span></h2><ul id="pl"></ul>
 <p>!! Pensez à sauvegarder les données !!</p>
 <button class="exp alt">Enregistrer</button></div>
-<div class="panel stats"><h2>Statistiques des présences</h2><div id="st"></div></div>
+<div class="panel stats"><h2>Statistiques globales des présences</h2><div id="st"></div></div>
 </section>
 <p class="ver">Version 9 · données stockées uniquement sur cet appareil</p>
 </main>
