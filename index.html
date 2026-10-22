@@ -18,21 +18,21 @@
 <div class="panel"><h2>Importer la liste des inscrits ou un fichier de sauvegarde.</h2>
 <p>Fichier .csv issu du formulaire d’inscription (attention à la structure du fichier !). Les nouveaux élèves sont ajoutés (repérés par ID ou nom d’utilisateur) et les présences déjà enregistrées sont conservées. Une sauvegarde peut aussi être réimportée.</p>
 <input type="file" id="file" accept=".csv,text/csv"></div>
-<div class="panel"><h2>Enregistrer</h2>
+<div class="panel"><h2>Sauvegarde des données</h2>
 <p>Génère un .csv complet incluant la gestion des présences par séance et le total.</p>
-<button class="exp">Sauvegarde</button></div>
+<button class="exp">Exporter</button></div>
 <p id="m1" class="msg wide"></p>
 <div class="panel wide"><h2>Élèves inscrits à l’AS <span id="nl"></span></h2>
 <table id="tl"></table></div>
 <div class="panel wide"><h2>Confidentialité</h2>
-<p>Aucune donnée n’est envoyée sur Internet : tout reste dans la mémoire de ce navigateur. Sauvegardez régulièrement et effacez les données en fin d’année (RGPD).</p>
+<p>Aucune donnée n’est envoyée sur Internet : tout reste dans la mémoire de ce navigateur. Sauvegardez régulièrement, importer autant de fois que vous le souhaitez votre dernière sauvegarde, et effacez les données si vous travaillez sur une machine publique, et aussi en fin d’année (RGPD).</p>
 <button id="wipe" class="danger">Effacer toutes les données</button></div>
 </section>
 <section id="t2" hidden>
 <div class="panel"><h2>Toutes les cartes</h2>
-<button id="gen">Générer les cartes</button>
-<button id="pdf" class="alt" disabled>Télécharger toutes les cartes (PDF)</button></div>
-<div class="panel"><h2>Une seule carte</h2>
+<button id="gen">Générer les cartes de membres</button>
+<button id="pdf" class="alt" disabled>Télécharger toutes les cartes en PDF</button></div>
+<div class="panel"><h2>Une seule carte (PDF)</h2>
 <div class="row"><input id="nm" list="dl" placeholder="Nom de l’élève"><button id="one">Télécharger</button></div></div>
 <p id="m2" class="msg wide"></p>
 <div id="cards" class="wide"></div>
@@ -43,10 +43,10 @@
 <div id="cam" hidden><video id="v" playsinline muted></video></div>
 <p id="m3" class="msg"></p>
 <div class="row man"><input id="man" list="dl" placeholder="Ajout manuel (nom)"><button id="add" class="alt">Ajouter</button></div></div>
-<div class="panel"><h2>Elèves présents aujourd'hui <span id="np"></span></h2><ul id="pl"></ul>
+<div class="panel"><h2>Elèves présents lors de la séance<span id="np"></span></h2><ul id="pl"></ul>
 <p>!! Pensez à sauvegarder les données !!</p>
 <button class="exp alt">Enregistrer</button></div>
-<div class="panel stats"><h2>Statistiques des présences</h2><div id="st"></div></div>
+<div class="panel stats"><h2>Statistiques globales des présences</h2><div id="st"></div></div>
 </section>
 <p class="ver">Version 13 · données stockées uniquement sur cet appareil</p>
 </main>
