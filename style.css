@@ -54,4 +54,5 @@ select{font:inherit;min-height:44px;padding:.5rem .8rem;border:2px solid var(--b
 .filters label:nth-child(-n+2){grid-column:1/-1}.filters select{min-width:0;text-overflow:ellipsis}
 #vh{font-size:.85rem;margin:.6rem 0 0}#vh:empty{display:none}li b{color:var(--p);font-size:1.05rem}
 .filters select{font-weight:400;color:var(--t)}
-button.exp{background:#dc2626;border-color:#dc2626;color:#fff}
+button.exp{background:#b91c1c;border-color:#b91c1c;color:#fff;font-size:1.05rem}
+button.exp:hover{background:#991b1b;border-color:#991b1b}
