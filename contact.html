@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact – Gestion AS</title>
+<meta name="theme-color" content="#ea580c"><link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css?v=16"></head><body>
+<header><div class="hd"><span class="lg"><img src="logo-transparent.png" alt="" onerror="this.onerror=function(){this.style.display='none'};this.src='logo.png'"></span><h1>Gestion AS<small>Association Sportive</small></h1><a class="back" href="index.html">← Application</a></div></header>
+<main><article class="panel doc">
+<h1>Contact</h1>
+<p>Une question, un problème ou une suggestion à propos de Gestion AS ? Ce formulaire prépare un e-mail adressé à <a href="mailto:vinzneuron@gmail.com">vinzneuron@gmail.com</a>. Il s’ouvre dans votre application de messagerie : rien n’est envoyé tant que vous ne validez pas l’envoi, et aucun serveur n’est utilisé.</p>
+<div class="form">
+<label>Votre nom (facultatif)<input id="cn" autocomplete="name"></label>
+<label>Objet<select id="co"><option>Question</option><option>Problème rencontré</option><option>Suggestion d’amélioration</option><option>Autre</option></select></label>
+<label>Message<textarea id="cm" rows="7"></textarea></label>
+<p class="note">N’indiquez aucun nom d’élève ni donnée personnelle d’élève dans votre message.</p>
+<button id="cs">Ouvrir ma messagerie</button>
+<p id="cr" class="msg err" hidden>Écrivez d’abord votre message.</p>
+</div>
+<p>Si votre messagerie ne s’ouvre pas, écrivez directement à <a href="mailto:vinzneuron@gmail.com">vinzneuron@gmail.com</a>.</p>
+<script>
+function mailtoUrl(){var n=document.getElementById('cn').value.trim(),m=document.getElementById('cm').value.trim(),o=document.getElementById('co').value;
+var b=m+(n?'\n\n'+n:'');
+return 'mailto:vinzneuron@gmail.com?subject='+encodeURIComponent('[Gestion AS] '+o)+'&body='+encodeURIComponent(b.replace(/\n/g,'\r\n'))}
+document.getElementById('cs').onclick=function(){var ok=document.getElementById('cm').value.trim();document.getElementById('cr').hidden=!!ok;if(ok)location.href=mailtoUrl()};
+</script>
+<p><a class="btnlink" href="index.html">Retour à l’application</a></p>
+</article></main></body></html>

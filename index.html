@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gestion AS</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#ea580c">
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<script>addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.dip=e;dispatchEvent(new Event("dipready"))})</script>
+<link rel="stylesheet" href="style.css?v=16"></head><body>
+<header><div class="hd"><span class="lg"><img src="logo-transparent.png" alt="" onerror="this.onerror=function(){this.style.display='none'};this.src='logo.png'"></span><h1>Gestion AS<small>Association Sportive</small></h1><span id="count"></span></div></header>
+<nav aria-label="Sections">
+<button data-t="t1" class="on">Import / Export</button>
+<button data-t="t2">Cartes d’AS</button>
+<button data-t="t3">Appel AS</button></nav>
+<main>
+<section id="t1">
+<div class="hero wide"><img src="logo.png" alt="Logo de l’Association Sportive" onerror="this.style.display='none'"></div>
+<div class="panel wide" id="inst" hidden><h2>Installer l’application</h2><p id="instp"></p><button id="instb" hidden>Installer sur cet appareil</button></div>
+<div class="panel"><h2>Importer la liste des inscrits ou un fichier de sauvegarde.</h2>
+<p>Fichier .csv issu du formulaire d’inscription (attention à la structure du fichier !). Les nouveaux élèves sont ajoutés (repérés par ID ou nom d’utilisateur) et les présences déjà enregistrées sont conservées. Une sauvegarde peut aussi être réimportée.</p>
+<input type="file" id="file" accept=".csv,text/csv"></div>
+<div class="panel"><h2>Enregistrer</h2>
+<p>Génère un .csv complet incluant la gestion des présences par séance et le total.</p>
+<button class="exp">Sauvegarde</button></div>
+<p id="m1" class="msg wide"></p>
+<div class="panel wide"><h2>Élèves inscrits à l’AS <span id="nl"></span></h2>
+<table id="tl"></table></div>
+<div class="panel wide"><h2>Confidentialité</h2>
+<p>Aucune donnée n’est envoyée sur Internet : tout reste dans la mémoire de ce navigateur. Sauvegardez régulièrement et effacez les données en fin d’année (RGPD).</p>
+<button id="wipe" class="danger">Effacer toutes les données</button></div>
+</section>
+<section id="t2" hidden>
+<div class="panel"><h2>Toutes les cartes</h2>
+<button id="gen">Générer les cartes</button>
+<button id="pdf" class="alt" disabled>Télécharger toutes les cartes (PDF)</button></div>
+<div class="panel"><h2>Une seule carte</h2>
+<div class="row"><input id="nm" list="dl" placeholder="Nom de l’élève"><button id="one">Télécharger</button></div></div>
+<p id="m2" class="msg wide"></p>
+<div id="cards" class="wide"></div>
+</section>
+<section id="t3" hidden>
+<div class="panel"><h2>Séance</h2>
+<div class="row"><input type="date" id="date" aria-label="Date de la séance"><button id="scan">Lancer le scan</button><button id="stop" class="alt" hidden>Fin du scan</button></div>
+<div class="row man"><select id="act" aria-label="Activité de la séance"></select></div>
+<div id="cam" hidden><video id="v" playsinline muted></video></div>
+<p id="m3" class="msg"></p>
+<div class="row man"><input id="man" list="dl" placeholder="Ajout manuel (nom)"><button id="add" class="alt">Ajouter</button></div></div>
+<div class="panel"><h2>Elèves présents aujourd'hui <span id="np"></span></h2><ul id="pl"></ul>
+<p>!! Pensez à sauvegarder les données !!</p>
+<button class="exp alt">Enregistrer</button></div>
+<div class="panel"><h2>Consulter les présences <span id="vn"></span></h2>
+<div class="filters"><label>Date de séance<select id="fd"></select></label>
+<label>Activité<select id="fa"></select></label>
+<label>Jour de la semaine<select id="fj"><option value="">Tous</option><option value="1">Lundi</option><option value="2">Mardi</option><option value="3">Mercredi</option><option value="4">Jeudi</option><option value="5">Vendredi</option><option value="6">Samedi</option><option value="0">Dimanche</option></select></label>
+<label>Sexe<select id="fs"><option value="">Tous</option><option value="Filles">Filles</option><option value="Garçons">Garçons</option></select></label></div>
+<p id="vh"></p><ul id="vl"></ul></div>
+<div class="panel stats"><h2>Statistiques des présences</h2><div id="st"></div></div>
+</section>
+<footer class="foot">
+<div><a href="confidentialite.html">Politique de confidentialité</a><a href="contact.html">Contact</a></div>
+<div><a href="http://vinzneuron.free.fr/" target="_blank" rel="noopener noreferrer">Site web</a><a href="https://www.instagram.com/vinzneuron/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/@vinz_neuron" target="_blank" rel="noopener noreferrer">YouTube</a></div>
+<p>Gestion AS · Vincent TOCQUIN – « VinZ Neuron »</p>
+</footer>
+<p class="ver">Version 16 · données stockées uniquement sur cet appareil</p>
+</main>
+<datalist id="dl"></datalist>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" crossorigin="anonymous"></script>
+<script src="app.js?v=15"></script>
+</body></html>
